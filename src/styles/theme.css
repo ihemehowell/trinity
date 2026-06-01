@@ -1,0 +1,131 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Trinity House Color System */
+  --navy: #0D2137;
+  --gold: #C8A030;
+  --gold-light: #F0D98A;
+  --cream: #FAF7F2;
+  --charcoal: #2C2C2C;
+  --muted: #7A7A7A;
+  --divider: #E5DDD0;
+
+  /* Base theme tokens */
+  --font-size: 16px;
+  --background: var(--cream);
+  --foreground: var(--charcoal);
+  --card: #ffffff;
+  --card-foreground: var(--charcoal);
+  --popover: #ffffff;
+  --popover-foreground: var(--charcoal);
+  --primary: var(--gold);
+  --primary-foreground: var(--navy);
+  --secondary: var(--navy);
+  --secondary-foreground: #ffffff;
+  --accent: var(--gold-light);
+  --accent-foreground: var(--navy);
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: var(--divider);
+  --input: transparent;
+  --input-background: #ffffff;
+  --switch-background: #cbced4;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--gold);
+  --radius: 0.5rem;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-subheading: 'Cormorant Garamond', serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Custom Trinity House colors */
+  --color-navy: var(--navy);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-cream: var(--cream);
+  --color-charcoal: var(--charcoal);
+  --color-divider: var(--divider);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  html {
+    font-size: var(--font-size);
+    scroll-behavior: smooth;
+  }
+
+  h1 {
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  h4 {
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  label {
+    font-weight: 500;
+  }
+
+  button {
+    font-family: var(--font-body);
+    font-weight: 500;
+  }
+
+  input, textarea, select {
+    font-family: var(--font-body);
+  }
+}
